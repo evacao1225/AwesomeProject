@@ -5,19 +5,22 @@ import NoticeWithBubble from './noticeWithBubble';
 import StatusBar from './statusBar';
 
 export default Header = function(props) {
+	let styles = StyleSheet.create({
+		header: {
+			flex: 1,
+			backgroundColor: props.backgroundColor,
+			justifyContent: 'flex-end',
+			width: 100
+		}
+	});
+
 	return (
-		<View style={styles.header} >
+		/*<View style={styles.header} >
 			<StatusBar backgroundColor={styles.header.backgroundColor} />
 			<NoticeWithBubble msgCount={props.msgCount} />
+		</View>*/
+		<View style={styles.header}>
+			{props.children}
 		</View>
 	);
 }
-
-const styles = StyleSheet.create({
-	header: {
-		flex: 1,
-		backgroundColor: 'gray',
-		justifyContent: 'flex-end',
-		width: 100
-	}
-});

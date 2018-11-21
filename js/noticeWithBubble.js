@@ -1,19 +1,20 @@
 import React, { PureComponent } from 'react';
-import { View, Text, StyleSheet } from 'react-native';
+import { TouchableOpacity, View, Text, StyleSheet } from 'react-native';
 //import FontAwesome, { Icons } from 'react-native-fontawesome';
 
 export default class NoticeWithBubble extends PureComponent {
 	//<FontAwesome>{Icons.envelope}</FontAwesome>
+
 	render() {
 		return (
-			<View style={styles.container}>
+			<TouchableOpacity style={styles.container} onPress={this.props.handleClick}>
 				<View style={styles.msgIcon}>
 
 				</View>
 				<View style={styles.msgBubble}>
 					<Text style={styles.msgCount}>{this.props.msgCount}</Text>
 				</View>
-			</View>
+			</TouchableOpacity>
 		);
 	}
 }
