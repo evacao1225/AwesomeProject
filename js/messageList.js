@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 export default class MessageList extends Component {
 	constructor(props) {
@@ -8,6 +9,7 @@ export default class MessageList extends Component {
 	}
 
 	handlePress(e) {
+		console.log('hello');
 		console.log(e.target.name);
 	}
 
@@ -18,7 +20,7 @@ export default class MessageList extends Component {
 				messageItems.push(
 					<TouchableOpacity key={item.title} style={styles.msgItem} onPress={this.handlePress}>
 						<View style={styles.itemLeft}>
-
+							<FontAwesome5 name={'envelope'} size={25} color="gray" />
 						</View>
 						<View style={styles.itemRight}>
 							<Text style={styles.title}>{item.title}</Text>
@@ -59,11 +61,11 @@ const styles = StyleSheet.create({
 		alignItems: 'center'
 	},
 	itemLeft: {
-		borderStyle: 'solid',
-		borderColor: 'black',
-		borderWidth: 1,
-		width: 20,
-		height: 20,
+		//borderStyle: 'solid',
+		//borderColor: 'black',
+		//borderWidth: 1,
+		width: 25,
+		height: 25,
 		marginLeft: 10,
 		marginRight: 10
 	},

@@ -1,15 +1,14 @@
 import React, { PureComponent } from 'react';
 import { TouchableOpacity, View, Text, StyleSheet } from 'react-native';
-//import FontAwesome, { Icons } from 'react-native-fontawesome';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
 export default class NoticeWithBubble extends PureComponent {
-	//<FontAwesome>{Icons.envelope}</FontAwesome>
 
 	render() {
 		return (
 			<TouchableOpacity style={styles.container} onPress={this.props.handleClick}>
 				<View style={styles.msgIcon}>
-
+					<FontAwesome5 name={'envelope'} size={25} color="#fff" />
 				</View>
 				<View style={styles.msgBubble}>
 					<Text style={styles.msgCount}>{this.props.msgCount}</Text>
@@ -27,27 +26,27 @@ const styles = StyleSheet.create({
 		marginTop: 10
 	},
 	msgIcon: {
-		width: 30,
-		height: 30,
-		borderWidth: 1,
-		borderStyle: 'solid',
-		borderColor: '#000'
+		//width: 30,
+		//height: 30,
+		//borderWidth: 1,
+		//borderStyle: 'solid',
+	//	borderColor: '#000'
 	},
 	msgBubble: {
-		width: 20,
-		height: 20,
+		width: 16,
+		height: 16,
 		alignItems: 'center',
 		backgroundColor: '#f00',
 		borderRadius: 50,
 		position: 'absolute',
-		right: -10,
-		top: -10
+		right: -8,
+		top: -8
 	},
 	msgCount: {
 		fontSize: 10,
 		color: '#fff',
 		fontWeight: 'bold',
-		lineHeight: 20,
+		lineHeight: 16,
 		backgroundColor: 'transparent'
 	}
 });
