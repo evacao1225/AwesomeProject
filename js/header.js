@@ -7,10 +7,11 @@ import StatusBar from './statusBar';
 export default Header = function(props) {
 	let styles = StyleSheet.create({
 		header: {
-			flex: 1,
+			//flex: 1,
 			backgroundColor: props.backgroundColor,
-			justifyContent: 'flex-end',
-			width: 100
+			//justifyContent: 'flex-end',
+			//width: 50,
+			height: 60
 		}
 	});
 

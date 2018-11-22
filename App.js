@@ -33,6 +33,11 @@ export default class AwesomeProject extends Component {
 					title: 'message 3',
 					content: 'this is message 3.',
 					read: false
+				},
+				{
+					title: 'message 4',
+					content: 'this is message 4.',
+					read: false
 				}
 			]
 		};
@@ -40,7 +45,9 @@ export default class AwesomeProject extends Component {
 
 	// display message list
 	showMessage() {
-
+		this.setState({
+			showMessage: true
+		});
 	}
 
   render() {
@@ -48,7 +55,7 @@ export default class AwesomeProject extends Component {
       <View style={styles.container}>
 				<Header backgroundColor={this.headerBackgroundColor} key={'header'}>
 					<StatusBar backgroundColor={this.headerBackgroundColor} />
-					<NoticeWithBubble msgCount={20} handleClick={this.showMessage}/>
+					<NoticeWithBubble msgCount={4} handleClick={this.showMessage}/>
 				</Header>
 				{this.state.showMessage &&
 					<MessageList messages={this.state.messages} />
@@ -61,9 +68,9 @@ export default class AwesomeProject extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-		flexDirection: 'row',
+		flexDirection: 'column',
     //justifyContent: 'center',
-    alignItems: 'flex-start',
+    alignItems: 'stretch',
     backgroundColor: '#F5FCFF',
   }
 });

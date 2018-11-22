@@ -27,8 +27,8 @@ const styles = StyleSheet.create({
 		marginTop: 10
 	},
 	msgIcon: {
-		width: 32,
-		height: 32,
+		width: 30,
+		height: 30,
 		borderWidth: 1,
 		borderStyle: 'solid',
 		borderColor: '#000'
