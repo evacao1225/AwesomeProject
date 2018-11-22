@@ -7,7 +7,7 @@ export default class NoticeWithBubble extends PureComponent {
 	render() {
 		return (
 			<TouchableOpacity style={styles.container} onPress={this.props.handleClick}>
-				<View style={styles.msgIcon}>
+				<View>
 					<FontAwesome5 name={'envelope'} size={25} color="#fff" />
 				</View>
 				<View style={styles.msgBubble}>
@@ -24,13 +24,6 @@ const styles = StyleSheet.create({
 		alignSelf: 'flex-end',
 		marginRight: 15,
 		marginTop: 10
-	},
-	msgIcon: {
-		//width: 30,
-		//height: 30,
-		//borderWidth: 1,
-		//borderStyle: 'solid',
-	//	borderColor: '#000'
 	},
 	msgBubble: {
 		width: 16,

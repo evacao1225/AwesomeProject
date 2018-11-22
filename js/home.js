@@ -1,21 +1,17 @@
 import React, { Component } from 'react';
-import {
-  StyleSheet,
-  Text,
-  View
-} from 'react-native';
+import { View, ScrollView, Text, StyleSheet } from 'react-native';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 
-import Header from './js/header';
-import StatusBar from './js/statusBar';
-import NoticeWithBubble from './js/noticeWithBubble';
-import MessageList from './js/messageList';
-import Home from './js/home';
+import Header from './header';
+import StatusBar from './statusBar';
+import Footer from './footer';
+import MessageList from './messageList';
 
-export default class AwesomeProject extends Component {
+export default class Home extends Component {
 	constructor(props) {
 		super(props);
-		this.headerBackgroundColor = 'gray';
-		this.showMessage = this.showMessage.bind(this);
+		this.headerBackgroundColor = '#272727';
+		//this.showMessage = this.showMessage.bind(this);
 		this.state = {
 			showMessage: false,
 			messages: [
@@ -43,29 +39,24 @@ export default class AwesomeProject extends Component {
 		};
 	}
 
-	// display message list
-	showMessage() {
-		this.setState({
-			showMessage: true
-		});
-	}
 
-  render() {
-    /*return (
-      <View style={styles.container}>
+	render() {
+	return (
+		<View style={{flex: 1}}>
+			<ScrollView>
+			<View style={styles.container}>
 				<Header backgroundColor={this.headerBackgroundColor} key={'header'}>
-					<StatusBar backgroundColor={this.headerBackgroundColor} />
-					<NoticeWithBubble msgCount={4} handleClick={this.showMessage}/>
+					<StatusBar backgroundColor={this.headerBackgroundColor} barStyle={'light-content'}/>
 				</Header>
 				{this.state.showMessage &&
 					<MessageList messages={this.state.messages} />
 				}
-      </View>
-    );*/
-		return (
-			<Home />
-		)
-  }
+			</View>
+			</ScrollView>
+			<Footer />
+		</View>
+	);
+}
 }
 
 const styles = StyleSheet.create({
@@ -74,6 +65,6 @@ const styles = StyleSheet.create({
 		flexDirection: 'column',
     //justifyContent: 'center',
     alignItems: 'stretch',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#FCFCFC',
   }
 });
